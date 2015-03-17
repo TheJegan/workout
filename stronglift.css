@@ -1,14 +1,71 @@
-/*.numberOfSets .set {
-
-    padding: 5px 10px;
-    display: inline-block;
-    border: 1px grey solid;
-    text-align: center;
-    vertical-align: center;
-    border-radius: 50%;
-}*/
-
-/*.set
+.clear
 {
-	background: gray;
-}*/
+ clear: both;
+}
+
+.navbar
+{
+ margin-bottom: .5em;
+}
+
+body
+{
+ background: #ddd;
+}
+
+.row
+{
+ padding: 0 .5em .5em;
+}
+
+.header
+{
+ text-align: center;
+}
+.date, .personalWeight, .title, .sets
+{
+ background: #fff;
+ padding: .3em .5em;
+}
+
+.title
+{
+ border-bottom: 1px solid #ddd;
+}
+
+.weight
+{
+ float: right;
+}
+
+.sets
+{
+ position: relative;
+ font-size: 1.4em;
+ padding-left: 0;
+ padding-right: 0;
+}
+
+.repsContainer
+{
+ width: 20%;
+ float: left;
+ text-align: center;
+}
+
+.reps
+{
+ display: inline-block;
+ width: 2em;
+ height: 2em;
+ line-height: 2em;
+ border: 1px solid #000;
+ border-radius: 50%;
+ opacity: .3;
+}
+
+.solidBackground
+{
+ background: #EC2D21;
+ color: #fff;
+}
