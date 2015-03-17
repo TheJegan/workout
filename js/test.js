@@ -17,14 +17,39 @@ $(document).ready(function()
 
 	$(workout.exercise).each(function()
 	{
-		CreateExerciseRow(this.name,this.weight,this.set);
+		CreateExerciseRow(this);
 	});
 
 });
 
-function CreateExerciseRow(name, weight,set)
+function CreateExerciseRow(exercise)
 {
+	var name = exercise.name;
+	var weight = exercise.weight;
+	var set = exercise.set;
 	var exerciseContainer = $('#exerciseContainer');
+
+
+	var days = exercise.day.split(';');
+
+	$(days).each(function()
+	{
+		if(isDateValid(this[0]) === true)
+		{
+			console.log("true");
+		}else
+    {
+      console.log("false");
+    }
+	});
+
+  for(var i=0; i < days.length; i++)
+  {
+    if(isDateValid(days[0]) === false)
+    {
+      return;
+    }
+  }
 
 	//exerciseContainer.append('<div');
 	var row = '<div class="exercise row"> \
@@ -34,29 +59,44 @@ function CreateExerciseRow(name, weight,set)
 				</div>';
 		row += '<div class="sets">';
 
-			$(set).each(function()
-			{
+		$(set).each(function()
+		{
+		
 				row += '<div class="repsContainer">';
 				row += '<span class="reps">';
 				row += this.rep
 				row += '</span>';
 				row += '</div>'
-			});
-		
-		// 		<div class="repsContainer">
-		// 			<span class="reps">
-		// 				5
-		// 			</span>
-		// 		</div>
-		// 		<div class="repsContainer"><span class="reps">5</span></div>
-		// 		<div class="repsContainer"><span class="reps">5</span></div>
-		// 		<div class="repsContainer"><span class="reps">5</span></div>
-		// 		<div class="repsContainer"><span class="reps">5</span></div>
-		// 		<div class="clear"></div>
-		// 	</div>
+			
+		});
 		
 		row += '<div class="clear"></div></div>';
 		exerciseContainer.append(row);
+}
+
+
+function isDateValid(date)
+{
+	var d = new Date();
+	var weekday = new Array(7);
+	weekday[0]=  "su";
+	weekday[1] = "m";
+	weekday[2] = "tu";
+	weekday[3] = "w";
+	weekday[4] = "th";
+	weekday[5] = "f";
+	weekday[6] = "sa";
+
+	var n = weekday[d.getDay()];
+
+
+	if(n === date)
+	{
+		return true;
+	}else{
+    return false;
+  }
+
 }
 
 function GetDummyJson()
@@ -95,7 +135,7 @@ function GetDummyJson()
               "easy":90,
               "hard":180
             },
-            "day":"m;w;f;",
+            "day":"m;w;f",
             "week":"1, 3"
           },
           {
@@ -125,6 +165,7 @@ function GetDummyJson()
               "easy":90,
               "hard":180
             },
+            "day":"m;w;f",
             "week":"1, 3"
           },
           {
@@ -154,7 +195,7 @@ function GetDummyJson()
               "easy":90,
               "hard":180
             },
-            "day":"tu;th;sa;su;",
+            "day":"tu;th;sa;su",
             "week":"2, 4"
           },
         ]
