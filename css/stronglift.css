@@ -3,6 +3,21 @@
  clear: both;
 }
 
+.layoutTable
+{
+ display: table;
+}
+
+.layoutRow
+{
+ display: table-row;
+}
+
+.layoutCell
+{
+ display: table-cell;
+}
+
 .navbar
 {
  margin-bottom: .5em;
@@ -64,8 +79,41 @@ body
  opacity: .3;
 }
 
+.footer
+{
+ width: 100%;
+ text-align: center;
+}
+
+.addExercises
+{
+ width: 1px;
+ padding-right: .5em;
+}
+
+.addExercises span
+{
+ display: inline-block;
+ background: #fff;
+ font-size: 2em;
+ line-height: 1.1em;
+ width: 1.1em;
+ height: 1.1em;
+}
+
+.finishWorkout
+{
+ font-size: 1.07em;
+ vertical-align: middle;
+}
+
 .solidBackground
 {
  background: #EC2D21;
  color: #fff;
+}
+
+.coloredText
+{
+ color: #EC2D21;
 }
