@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  ng-app="WorkoutApp">>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
 		<title>Stronglifts</title>
 
 		<!-- Bootstrap -->
+		
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/stronglift.css" rel="stylesheet">
 		<link href="favicon.ico" rel="shortcut icon">
@@ -18,7 +19,7 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
+	<body ng-controller="RegimenCtrl">
 		<nav class="navbar navbar-inverse  navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -50,10 +51,10 @@
 				<div class='clear'></div>
 			</div>
 
-			<div id="exerciseContainer">
+			<div id="exerciseContainer" ng-repeat="workout in regimen">
 				<div class="exercise row">
 					<div class="title coloredText">
-						<span class="name">SQUAT</span>  <span class="weight">5x5 20KG</span>
+						<span class="name">{{workout.name}}</span>  <span class="weight">5x5 20KG</span>
 					</div>
 					<div class="sets">
 						<div class="repsContainer">
@@ -111,8 +112,10 @@
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="js/controllers.js"></script>
 		<script src="js/moment.js"></script>
-		<script src="js/test.js"></script>
+		<!-- <script src="js/test.js"></script> -->
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
 	</body>
