@@ -28,32 +28,27 @@ function CreateExerciseRow(exercise)
 	var weight = exercise.weight;
 	var set = exercise.set;
 	var exerciseContainer = $('#exerciseContainer');
-
+  var isValid = false;
 
 	var days = exercise.day.split(';');
 
-	$(days).each(function()
-	{
-		if(isDateValid(this[0]) === true)
-		{
-			console.log("true");
-		}else
-    {
-      console.log("false");
-    }
-	});
-
   for(var i=0; i < days.length; i++)
   {
-    if(isDateValid(days[0]) === false)
+    if(isDateValid(days[i]) === true)
     {
-      return;
+      isValid = true;
+      break;
     }
+  }
+
+  if(isValid === false)
+  {
+    return;
   }
 
 	//exerciseContainer.append('<div');
 	var row = '<div class="exercise row"> \
-					<div class="title">		\
+					<div class="title coloredText">		\
 						<span class="name">'+name+'</span>  \
 						<span class="weight">'+weight.value+weight.unit+'</span> \
 				</div>';
@@ -71,7 +66,10 @@ function CreateExerciseRow(exercise)
 		});
 		
 		row += '<div class="clear"></div></div>';
-		exerciseContainer.append(row);
+		// exerciseContainer.append(row);
+
+
+    exerciseContainer.find('.footer').parent().prepend(row);
 }
 
 
