@@ -66,10 +66,7 @@ function CreateExerciseRow(exercise)
 		});
 		
 		row += '<div class="clear"></div></div>';
-		// exerciseContainer.append(row);
-
-
-    exerciseContainer.find('.footer').parent().prepend(row);
+		exerciseContainer.prepend(row);
 }
 
 
