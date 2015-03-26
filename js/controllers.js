@@ -1,63 +1,69 @@
 var WorkoutApp = angular.module('WorkoutApp', []);
 
 WorkoutApp.controller('RegimenCtrl', function ($scope) {
-  $scope.regimen = [
+
+  $scope.toggleDoneStatus = function(thing)
+  {
+    $scope.done = !$scope.done;
+  };
+
+  $scope.regimens = [
       {
-        "name":"Strong Lift",
-        "startDate":"03/05/2015",
-        "endDate":"-1",
-        "exercise":[
+        name:"Strong Lift",
+        startDate:"03/05/2015",
+        endDate:"-1",
+        exercises:[
           {
-            "name":"Squat",
-            "weight":{
-              "value":300,
-              "unit":"LB"
+            name:"Squat",
+            weight:{
+              value:300,
+              unit:"LB"
             },
-            "set":[
+            sets:[
               {
-                "rep":5
+                rep:5, done:false
               },
               {
-                "rep":5
+                rep:5, done:false
               },
               {
-                "rep":5
+                rep:5, done:false
               },
               {
-                "rep":5
+                rep:5, done:false
               },
               {
-                "rep":5
+                rep:5, done:false
               }
             ],
-            "rest":{
-              "easy":90,
-              "hard":180
+            rest:{
+              easy:90,
+              hard:180
             },
-            "day":"m;w;f",
-            "week":"1, 3"
+            day:"m;w;f",
+            week:"1, 3"
           },
           {
-            "name":"bench",
-            "weight":{
-              "value":300,
-              "unit":"LB"
+            name:"bench",
+            weight:{
+              value:300,
+              unit:"LB"
             },
-            "set":[
+            sets:[
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               }
             ],
             "rest":{
@@ -73,21 +79,21 @@ WorkoutApp.controller('RegimenCtrl', function ($scope) {
               "value":300,
               "unit":"LB"
             },
-            "set":[
+            "sets":[
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               },
               {
-                "rep":5
+                "rep":5, done:false
               }
             ],
             "rest":{
@@ -100,24 +106,24 @@ WorkoutApp.controller('RegimenCtrl', function ($scope) {
         ]
       },
       {
-        "name":"WHOLE IN ONE",
+        "name":"Whole In One",
         "startDate":"03/05/2015",
-        "exercise":[
+        "exercises":[
           {
             "name":"Bench Press",
             "weight":{
               "value":300,
               "unit":"LB"
             },
-            "set":[
+            "sets":[
               {
-                "rep":8
+                "rep":8, done:false
               },
               {
-                "rep":10
+                "rep":10, done:false
               },
               {
-                "rep":12
+                "rep":12, done:false
               }
             ],
             "day":[
@@ -136,15 +142,15 @@ WorkoutApp.controller('RegimenCtrl', function ($scope) {
               "value":300,
               "unit":"LB"
             },
-            "set":[
+            "sets":[
               {
-                "rep":10
+                "rep":10, done:false
               },
               {
-                "rep":12
+                "rep":12, done:false
               },
               {
-                "rep":15
+                "rep":15, done:false
               }
             ],
             "week":1

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="WorkoutApp">>
+<html lang="en"  ng-app="WorkoutApp">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,51 +51,22 @@
 				<div class='clear'></div>
 			</div>
 
-			<div id="exerciseContainer" ng-repeat="workout in regimen">
-				<div class="exercise row">
-					<div class="title coloredText">
-						<span class="name">{{workout.name}}</span>  <span class="weight">5x5 20KG</span>
-					</div>
-					<div class="sets">
-						<div class="repsContainer">
-							<span class='reps'>
-								5
-							</span>
+			<div ng-repeat="regimen in regimens">
+				<h4>{{regimen.name}}</h4>
+				<div id="exerciseContainer" ng-repeat="exercise in regimen.exercises">
+					<div class="exercise row">
+						<div class="title coloredText">
+							<span class="name">{{exercise.name}}</span>  <span class="weight">{{exercise.sets.length}}x5 20KG</span>
 						</div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class='clear'></div>
-					</div>
+						<div class="sets">
+							<div class="repsContainer" ng-click="set.done = !set.done" ng-repeat="set in exercise.sets">
+								<span class='reps setIsDone-{{set.done}}'>{{set.rep}}</span>
+							</div>
+							<div class='clear'></div>
+						</div>
+					</div>				
 				</div>
-				<!-- <div class="exercise row">
-					<div class="title coloredText">
-						<span class="name">PRESS</span>  <span class="weight">5x5 20KG</span>
-					</div>
-					<div class="sets">
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class='clear'></div>
-					</div>
-				</div>
-
-				<div class="exercise row">
-					<div class="title coloredText">
-						<span class="name">DEADLIFT</span>  <span class="weight">5x5 40KG</span>
-					</div>
-					<div class="sets">
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class="repsContainer"><span class='reps'>5</span></div>
-						<div class='clear'></div>
-					</div>
-				</div> -->
+			</div>
 
 			<div class="row">
 				<div class="layoutTable footer">

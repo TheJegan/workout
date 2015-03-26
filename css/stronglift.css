@@ -48,6 +48,11 @@ body
  border-bottom: 1px solid #ddd;
 }
 
+.title .name
+{
+ text-transform: uppercase;
+}
+
 .weight
 {
  float: right;
@@ -79,6 +84,12 @@ body
  opacity: .3;
 }
 
+.setIsDone-true
+{
+ opacity: 1;
+ border: none;
+}
+
 .footer
 {
  width: 100%;
@@ -107,7 +118,8 @@ body
  vertical-align: middle;
 }
 
-.solidBackground
+.solidBackground,
+.setIsDone-true
 {
  background: #EC2D21;
  color: #fff;
